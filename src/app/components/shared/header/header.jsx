@@ -41,12 +41,11 @@ const Header = () => {
       <Container>
         <div className="flex items-center justify-between py-4">
           <div>
-            <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <Image src={logo} alt="educrat" width={150} height={50} />
             </Box>
-            <Box sx={{ display: { xs: "block", md: "none" } }}>
+            <Box sx={{ display: { xs: "block", sm: "none" } }}>
               <Image
-                sx={{ display: { xs: "block", md: "none" } }}
                 src={logo2}
                 alt="educrat"
                 width={55}
