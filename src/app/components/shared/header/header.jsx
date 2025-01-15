@@ -30,12 +30,6 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 const Header = () => {
   const { isDarkMode, toggleTheme } = useThemeStore();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const [age, setAge] = React.useState("tj");
 
   const handleChange = (event) => {
@@ -105,13 +99,16 @@ const Header = () => {
                 />
               }
             />
-            <FormControl sx={{ m: 1, minWidth: 50 }} size="small">
+            <FormControl
+              sx={{ m: 1, minWidth: 50, display: { xs: "none", lg: "flex" } }}
+              size="small"
+            >
               <Select
                 labelId="demo-select-small-label"
                 id="demo-select-small"
                 value={age}
                 onChange={handleChange}
-                sx={{color:"white",border:"1px solid white"}}
+                sx={{ color: "white", border: "1px solid white" }}
               >
                 <MenuItem value={"en"}>ENG</MenuItem>
                 <MenuItem value={"ru"}>RUS</MenuItem>
@@ -135,91 +132,8 @@ const Header = () => {
               Log in
             </Button>
           </Box>
-
-          {/* Mobile Menu Icon */}
-          {/* <IconButton
-            sx={{ display: { xs: "block", lg: "none" } }}
-            onClick={toggleMenu}
-          >
-            <MenuOpenIcon sx={{ color: "white" }} />
-          </IconButton> */}
         </div>
       </Container>
-
-      {/* Mobile Drawer for Menu */}
-      <Drawer anchor="left" open={isMenuOpen} onClose={toggleMenu}>
-        <Box
-          sx={{
-            width: 300,
-            padding: 2,
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          {/* Close Button */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 2,
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold", fontSize: "16px" }}
-            >
-              Log in / Sign Up
-            </Typography>
-            <IconButton onClick={toggleMenu}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-
-          {/* Menu Items */}
-          <List>
-            {[
-              "Home",
-              "Courses",
-              "Blog",
-              "Shop",
-              "Events",
-              "Pages",
-              "About",
-              "Contact",
-            ].map((item, index) => (
-              <ListItem
-                key={index}
-                sx={{
-                  padding: "18px 20px",
-                  "&:hover": {
-                    backgroundColor: "#6440fb12",
-                    borderRadius: "8px",
-                    color: "#6440fb",
-                  },
-                }}
-              >
-                <ListItemText
-                  primary={item}
-                  primaryTypographyProps={{
-                    style: {
-                      fontWeight: "500",
-                      fontSize: "15px",
-                    },
-                  }}
-                  sx={{
-                    "&:hover": {
-                      color: "#6440fb",
-                    },
-                  }}
-                />
-                <ArrowForwardIosIcon fontSize="small" sx={{ color: "#999" }} />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
     </div>
   );
 };
