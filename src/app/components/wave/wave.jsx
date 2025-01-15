@@ -8,23 +8,23 @@ export default function Wave() {
   useEffect(() => {
     const waves = document.querySelectorAll(`.${styles.parallax} use`);
     
-    // Smooth wave movement and opacity animation
+    
     waves.forEach((wave, i) => {
-      // Animation for wave movement
+      
       gsap.to(wave, {
-        x: "-200%", // Moves the waves horizontally
-        duration: 12 + i * 1.5, // Slower waves have more time to animate
-        repeat: -1, // Infinite loop
-        ease: "sine.inOut", // Smooth easing for natural motion
+        x: "-200%", 
+        duration: 12 + i * 1.5, 
+        repeat: -1, 
+        ease: "sine.inOut", 
       });
 
-      // Animation for wave opacity
+      
       gsap.to(wave, {
-        opacity: 0.7 + i * 0.3, // Varying opacity for each wave
-        duration: 6 + i, // Different duration for each wave
-        repeat: -1, // Infinite loop
-        yoyo: true, // Return to original opacity
-        ease: "sine.inOut", // Smooth easing for opacity
+        opacity: 0.7 + i * 0.3, 
+        duration: 6 + i, 
+        repeat: -1, 
+        yoyo: true, 
+        ease: "sine.inOut", 
       });
     });
   }, []);
