@@ -12,6 +12,10 @@ import {
   FormControl,
   Select,
   MenuItem,
+  Drawer,
+  Typography,
+  List,
+  ListItem,
 } from "@mui/material";
 
 import useThemeStore from "@/app/store/themeStore";
@@ -36,6 +40,12 @@ const Header = () => {
 
   const handleChangeNavigation = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
   };
 
   return (
@@ -131,7 +141,14 @@ const Header = () => {
         </div>
       </Container>
 
-      <Box sx={{position:"absolute",bottom:"0",width:"100%",display: { xs: "block", lg: "none" }}}>
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          display: { xs: "block", lg: "none" },
+        }}
+      >
         <BottomNavigation value={value} onChange={handleChangeNavigation}>
           <BottomNavigationAction
             label="Home"
@@ -152,9 +169,90 @@ const Header = () => {
             label="language"
             value="language"
             icon={<LanguageOutlinedIcon />}
+            onClick={toggleDrawer(true)}
           />
         </BottomNavigation>
       </Box>
+      <Drawer
+        anchor="bottom"
+        sx={{
+          height: "60vh",
+          "& .MuiDrawer-paper": {
+            borderTopLeftRadius: "20px",
+            borderTopRightRadius: "20px",
+            backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+            color: isDarkMode ? "#ffffff" : "#000000",
+          },
+        }}
+        open={open}
+        onClose={toggleDrawer(false)}
+      >
+        <Box
+          sx={{
+            p: "20px",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: isDarkMode ? "#ffffff" : "#000000",
+              marginBottom: "20px",
+            }}
+          >
+            Choose Language
+          </Typography>
+          <List sx={{ width: "100%" }}>
+            {[
+              { value: "en", label: "English", flag: "🇺🇸" },
+              { value: "ru", label: "Русский", flag: "🇷🇺" },
+              { value: "tj", label: "Тоҷикӣ", flag: "🇹🇯" },
+            ].map((item) => (
+              <ListItem
+                key={item.value}
+                onClick={() => setAge(item.value)}
+                sx={{
+                  cursor: "pointer",
+                  padding: "15px",
+                  textAlign: "center",
+                  borderRadius: "10px",
+                  transition: "all 0.3s ease",
+                  backgroundColor: age === item.value ? "#fb4" : "#2104",
+                  color:
+                    age === item.value
+                      ? "#ffffff"
+                      : isDarkMode
+                      ? "#ffffff"
+                      : "#000000",
+                  "&:hover": {
+                    backgroundColor: "#6440fb",
+                    color: "#ffffff",
+                    transform: "scale(1.01)",
+                  },
+                  mb: "20px",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    fontWeight: age === item.value ? "bold" : "normal",
+                  }}
+                >
+                  <span>{item.flag}</span> {item.label}
+                </Typography>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
     </div>
   );
 };
