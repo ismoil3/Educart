@@ -222,7 +222,7 @@ const Header = () => {
                   textAlign: "center",
                   borderRadius: "10px",
                   transition: "all 0.3s ease",
-                  backgroundColor: age === item.value ? "#fb4" : "#2104",
+                  backgroundColor: age === item.value ? "#6440fb" : "#2104",
                   color:
                     age === item.value
                       ? "#ffffff"
