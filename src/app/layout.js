@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
          <ThemeWrapper>
          <Header/>
          {children}
+         <br/><br/><br/><br/>
          </ThemeWrapper>
       </body>
     </html>

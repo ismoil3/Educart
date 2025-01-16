@@ -143,7 +143,7 @@ const Header = () => {
 
       <Box
         sx={{
-          position: "absolute",
+          position: "fixed",
           bottom: "0",
           width: "100%",
           display: { xs: "block", lg: "none" },
