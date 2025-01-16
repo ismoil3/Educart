@@ -41,7 +41,7 @@ const WaveAnimation = () => {
   }, []);
 
   return (
-    <div style={{ width: "100%",minHeight:"200px" }}>
+    <div style={{ width: "100%",minHeight:"200px",position:"relative" }}>
       <svg
       className="svg"
         viewBox="0 0 1440 320"

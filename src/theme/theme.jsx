@@ -8,12 +8,13 @@ const lightTheme = createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
+      gl: 1100,
     },
   },
   palette: {
     mode: "light",
     primary: {
-      main: "#1976d2", 
+      main: "#1976d2",
     },
     secondary: {
       main: "#9c27b0",
@@ -37,7 +38,7 @@ const darkTheme = createTheme({
       contrastText: "#000",
     },
     background: {
-      default: '#091220', 
+      default: "#091220",
     },
   },
 });
