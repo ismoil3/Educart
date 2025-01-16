@@ -49,7 +49,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-[#140342]">
+    <div className="bg-[#140342] z-50">
       <Container>
         <div className="flex items-center justify-between py-4">
           <div>
@@ -147,6 +147,7 @@ const Header = () => {
           bottom: "0",
           width: "100%",
           display: { xs: "block", lg: "none" },
+          zIndex: "1000",
         }}
       >
         <BottomNavigation value={value} onChange={handleChangeNavigation}>
@@ -215,7 +216,8 @@ const Header = () => {
             ].map((item) => (
               <ListItem
                 key={item.value}
-                onClick={() => setAge(item.value)}
+                onClick={() => {setOpen(false),setAge(item.value);
+                }}
                 sx={{
                   cursor: "pointer",
                   padding: "15px",
