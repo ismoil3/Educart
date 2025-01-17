@@ -151,6 +151,7 @@ export default function Home() {
 
           </div>
         </Container> <br />
+      <WaveAnimation/>
       </div>
     </div>
   );

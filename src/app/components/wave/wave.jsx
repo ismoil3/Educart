@@ -1,79 +1,115 @@
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import '../../Wave.css';
+"use client";
 
-const WaveAnimation = () => {
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+export default function WaveEffect() {
+  const waveRef = useRef(null);
+
   useEffect(() => {
-    // Аниматсия барои мавҷҳо
-    gsap.to("#wave1", {
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-      attr: {
-        d: "M0,200 Q360,150 720,200 T1440,200 V320 H0 Z",
-      },
-      rotation: 5, // Илова кардани гардиш
+    if (!waveRef.current) return;
+
+    // Create wave animations
+    const waves = waveRef.current.querySelectorAll(".wave");
+
+    waves.forEach((wave, index) => {
+      // Reset position before animation
+      gsap.set(wave, { x: 0 });
+
+      // Horizontal wave motion
+      gsap.to(wave, {
+        x: "-50%",
+        y: index * 10, // Add vertical offset for variety
+        duration: 10 + index * 2,
+        repeat: -1,
+        ease: "sine.inOut",
+        yoyo: true,
+      });
+
+      // Vertical scaling for dramatic effect
+      gsap.to(wave, {
+        scaleY: 1.5 + index * 0.3,
+        duration: 6 + index,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
     });
 
-    gsap.to("#wave2", {
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-      attr: {
-        d: "M0,180 Q360,220 720,180 T1440,180 V320 H0 Z",
-      },
-      stagger: {
-        amount: 1, // Аниматсияи қатор
-      },
-    });
-
-    gsap.to("#wave3", {
-      duration: 6,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-      attr: {
-        d: "M0,220 Q360,180 720,220 T1440,220 V320 H0 Z",
-      },
-    });
+    return () => {
+      gsap.killTweensOf(waves);
+    };
   }, []);
 
   return (
-    <div style={{ width: "100%",minHeight:"200px",position:"relative" }}>
-      <svg
-      className="svg"
-        viewBox="0 0 1440 320"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        {/* Мавҷи якум */}
-        <path
-          id="wave1"
-          d="M0,160 Q360,120 720,160 T1440,160 V320 H0 Z"
-          fill="rgba(100, 64, 251, 0.4)"
-        />
-        {/* Мавҷи дуюм */}
-        <path
-          id="wave2"
-          d="M0,180 Q360,140 720,180 T1440,180 V320 H0 Z"
-          fill="rgba(100, 64, 251, 0.3)"
-        />
-        {/* Мавҷи сеюм */}
-        <path
-          id="wave3"
-          d="M0,200 Q360,180 720,200 T1440,200 V320 H0 Z"
-          fill="rgba(100, 64, 251, 0.2)"
-        />
-      </svg>
+    <div
+      className="relative h-[200px]  sm:h-[250px] md:h-[300px] w-full overflow-hidden"
+      ref={waveRef}
+    >
+      {/* Wave container */}
+      <div className="absolute bottom-0  left-0 w-full">
+        {/* Multiple wave layers with enhanced curves */}
+        <svg
+          className="wave absolute bottom-0 left-0 w-[200%]"
+          viewBox="0 0 2880 320"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            className="fill-purple-300/10"
+            d="M0,160 
+               C300,260 600,60 900,160 
+               C1200,260 1500,60 1800,160 
+               C2100,260 2400,60 2700,160 
+               L2880,320 L0,320 Z"
+          />
+        </svg>
+        <svg
+          className="wave absolute bottom-0 left-0 w-[200%]"
+          viewBox="0 0 2880 320"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            className="fill-purple-300/20"
+            d="M0,200
+               C300,300 600,100 900,200
+               C1200,300 1500,100 1800,200
+               C2100,300 2400,100 2700,200
+               L2880,320 L0,320 Z"
+          />
+        </svg>
+        <svg
+          className="wave absolute bottom-0 left-0 w-[200%]"
+          viewBox="0 0 2880 320"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            className="fill-purple-300/30"
+            d="M0,240
+               C300,320 600,160 900,240
+               C1200,320 1500,160 1800,240
+               C2100,320 2400,160 2700,240
+               L2880,320 L0,320 Z"
+          />
+        </svg>
+        <svg
+          className="wave absolute bottom-0 left-0 w-[200%]"
+          viewBox="0 0 2880 320"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            className="fill-purple-400"
+            d="M0,280
+               C300,340 600,220 900,280
+               C1200,340 1500,220 1800,280
+               C2100,340 2400,220 2700,280
+               L2880,320 L0,320 Z"
+          />
+        </svg>
+      </div>
     </div>
   );
-};
-
-export default WaveAnimation;
+}
