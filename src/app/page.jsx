@@ -201,27 +201,74 @@ export default function Home() {
         <WaveAnimation />
       </div>
       <Container>
-        <div className="w-[95%] mt-[60px]  m-auto">
+        <p
+          style={{ color: isDarkMode ? "#fff" : "#140342" }}
+          className={`text-center mt-[40px] text-[18px] `}
+        >
+          Trusted by the world’s best
+        </p>
+        <div className="w-[95%] mt-[30px]  m-auto">
           <Slider arrows={false} {...settings}>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand1.png'} alt="work" width={100} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand1.png"
+                }
+                alt="work"
+                width={100}
+                height={100}
+              />
             </div>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand2.png'} alt="work" width={100} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand2.png"
+                }
+                alt="work"
+                width={100}
+                height={100}
+              />
             </div>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand3.png'} alt="work" width={100} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand3.png"
+                }
+                alt="work"
+                width={100}
+                height={100}
+              />
             </div>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand4.png'} alt="work" width={150} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand4.png"
+                }
+                alt="work"
+                width={150}
+                height={100}
+              />
             </div>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand5.png'} alt="work" width={140} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand5.png"
+                }
+                alt="work"
+                width={140}
+                height={100}
+              />
             </div>
             <div className="p-[20px]">
-              <Image src={'https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand6.png'} alt="work" width={140} height={100} />
+              <Image
+                src={
+                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand6.png"
+                }
+                alt="work"
+                width={140}
+                height={100}
+              />
             </div>
-            
           </Slider>
         </div>
       </Container>

@@ -14,7 +14,8 @@ export default {
     },
     backgroundImage: {
       home_section1: "url('https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-bg.png')", 
-    }
+    },
+    
   },
   
   plugins: [],
