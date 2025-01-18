@@ -12,6 +12,7 @@ import SlideshowOutlinedIcon from "@mui/icons-material/SlideshowOutlined";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import CourseList from "./components/home/courseList";
 
 export default function Home() {
   const { isDarkMode } = useThemeStore();
@@ -364,28 +365,55 @@ export default function Home() {
       <br />
       <br />
       <Container>
+        <div className="text-center">
+          <h2
+            className="mb-2 text-3xl font-bold sm:text-4xl"
+            style={{
+              color: isDarkMode
+                ? ""
+                : "rgb(17 24 39 / var(--tw-text-opacity, 1))",
+            }}
+          >
+            Our Most Popular Courses
+          </h2>
+          <p className="text-lg text-gray-600">
+            20,000+ unique online course list designs
+          </p>
+        </div>
+        <br />
+        <br />
+        <br />
         <div className="slider-container">
           <Slider {...settingsSection3}>
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="banner-content-wrapper max-w-[190px] h-[250px] flex flex-col items-center justify-center text-center p-4 md:p-6 bg-[#EEF2F6] hover:bg-[#140342] hover:text-[#ffff] rounded-lg transition-all duration-300 ease-in-out"
+                className={`banner-content-wrapper max-w-[190px] h-[250px] flex flex-col items-center justify-center text-center p-4 md:p-6 
+        ${
+          isDarkMode
+            ? "bg-[#1f2937] hover:bg-[#4B5563] text-white"
+            : "bg-[#EEF2F6] hover:bg-[#140342] hover:text-[#ffff]"
+        } 
+        rounded-lg transition-all duration-300 ease-in-out`}
               >
-               <div className=" bg-white p-[20px] inline-block rounded-full">
-               <img
-                  loading="lazy"
-                  decoding="async"
-                  
-                  src={feature.imageUrl}
-                  alt={`${feature.title} Icon`}
-                  className="m-auto "
-                />
-               </div>
+                <div className="bg-white p-[20px] inline-block rounded-full">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={feature.imageUrl}
+                    alt={`${feature.title} Icon`}
+                    className="m-auto"
+                  />
+                </div>
                 <div className="right-inner mt-4 flex flex-col items-center">
-                  <h3 className="banner-title text-xl font-semibold ">
+                  <h3
+                    className={`banner-title text-xl font-semibold `}
+                  >
                     {feature.title}
                   </h3>
-                  <div className="number text-sm  mt-2">
+                  <div
+                    className={`number text-sm mt-2 `}
+                  >
                     <span>{feature.courses}</span> Course
                     {feature.courses > 1 ? "s" : ""}
                   </div>
@@ -395,6 +423,8 @@ export default function Home() {
           </Slider>
         </div>
       </Container>
+      {/* section 4 */}
+      <CourseList />
     </div>
   );
 }
