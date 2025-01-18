@@ -43,7 +43,7 @@ export default function WaveEffect() {
 
   return (
     <div
-      className="relative h-[80px]  sm:h-[250px] md:h-[300px] w-full overflow-hidden"
+      className="relative h-[80px]  sm:h-[200px] md:h-[250px] w-full overflow-hidden"
       ref={waveRef}
     >
       {/* Wave container */}
