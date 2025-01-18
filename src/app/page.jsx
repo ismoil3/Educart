@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./components/shared/header/header";
 import useThemeStore from "./store/themeStore";
 import Container from "./components/shared/container/container";
-import { Avatar, Button, SvgIcon } from "@mui/material";
+import { Avatar, Box, Button, Slide, SvgIcon, Typography } from "@mui/material";
 import WaveAnimation from "./components/wave/wave";
 import Image from "next/image";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
@@ -26,6 +26,92 @@ export default function Home() {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
+
+  const settingsSection3 = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+    ],
+  };
+
+  const features = [
+    {
+      id: 1,
+      title: "Art & Humanities",
+      courses: 1,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c1.svg",
+    },
+    {
+      id: 2,
+      title: "Science & Technology",
+      courses: 5,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c2.svg",
+    },
+    {
+      id: 3,
+      title: "Business & Management",
+      courses: 3,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c3.svg",
+    },
+    {
+      id: 4,
+      title: "Graphic Design",
+      courses: 3,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c4.svg",
+    },
+    {
+      id: 5,
+      title: "Sales Marketing",
+      courses: 3,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c5.svg",
+    },
+    {
+      id: 6,
+      title: "IT and Software",
+      courses: 3,
+      imageUrl:
+        "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/c6.svg",
+    },
+  ];
 
   return (
     <div>
@@ -269,6 +355,42 @@ export default function Home() {
                 height={100}
               />
             </div>
+          </Slider>
+        </div>
+      </Container>
+
+      {/* section 3 */}
+      <br />
+      <br />
+      <br />
+      <Container>
+        <div className="slider-container">
+          <Slider {...settingsSection3}>
+            {features.map((feature) => (
+              <div
+                key={feature.id}
+                className="banner-content-wrapper max-w-[190px] h-[200px] flex flex-col items-center justify-center text-center p-4 md:p-6 bg-[#EEF2F6] rounded-lg transition-all duration-300 ease-in-out"
+              >
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="45"
+                  height="45"
+                  src={feature.imageUrl}
+                  alt={`${feature.title} Icon`}
+                  className="m-auto"
+                />
+                <div className="right-inner mt-4 flex flex-col items-center">
+                  <h3 className="banner-title text-xl font-semibold text-gray-800">
+                    {feature.title}
+                  </h3>
+                  <div className="number text-sm text-gray-500 mt-2">
+                    <span>{feature.courses}</span> Course
+                    {feature.courses > 1 ? "s" : ""}
+                  </div>
+                </div>
+              </div>
+            ))}
           </Slider>
         </div>
       </Container>
