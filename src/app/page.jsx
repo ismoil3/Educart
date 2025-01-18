@@ -384,7 +384,7 @@ export default function Home() {
         <br />
         <br />
         <div className="slider-container">
-          <Slider {...settingsSection3}>
+          <Slider arrows={false} {...settingsSection3}>
             {features.map((feature) => (
               <div
                 key={feature.id}
