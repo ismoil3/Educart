@@ -43,7 +43,7 @@ export default function WaveEffect() {
 
   return (
     <div
-      className="relative h-[200px]  sm:h-[250px] md:h-[300px] w-full overflow-hidden"
+      className="relative h-[80px]  sm:h-[250px] md:h-[300px] w-full overflow-hidden"
       ref={waveRef}
     >
       {/* Wave container */}
@@ -56,7 +56,7 @@ export default function WaveEffect() {
           preserveAspectRatio="none"
         >
           <path
-            className="fill-purple-200/10"
+            className="fill-purple-300/10"
             d="M0,160 
                C300,260 600,60 900,160 
                C1200,260 1500,60 1800,160 
