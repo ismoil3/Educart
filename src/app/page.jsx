@@ -369,22 +369,23 @@ export default function Home() {
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="banner-content-wrapper max-w-[190px] h-[200px] flex flex-col items-center justify-center text-center p-4 md:p-6 bg-[#EEF2F6] rounded-lg transition-all duration-300 ease-in-out"
+                className="banner-content-wrapper max-w-[190px] h-[250px] flex flex-col items-center justify-center text-center p-4 md:p-6 bg-[#EEF2F6] hover:bg-[#140342] hover:text-[#ffff] rounded-lg transition-all duration-300 ease-in-out"
               >
-                <img
+               <div className=" bg-white p-[20px] inline-block rounded-full">
+               <img
                   loading="lazy"
                   decoding="async"
-                  width="45"
-                  height="45"
+                  
                   src={feature.imageUrl}
                   alt={`${feature.title} Icon`}
-                  className="m-auto"
+                  className="m-auto "
                 />
+               </div>
                 <div className="right-inner mt-4 flex flex-col items-center">
-                  <h3 className="banner-title text-xl font-semibold text-gray-800">
+                  <h3 className="banner-title text-xl font-semibold ">
                     {feature.title}
                   </h3>
-                  <div className="number text-sm text-gray-500 mt-2">
+                  <div className="number text-sm  mt-2">
                     <span>{feature.courses}</span> Course
                     {feature.courses > 1 ? "s" : ""}
                   </div>
