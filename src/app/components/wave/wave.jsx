@@ -56,7 +56,7 @@ export default function WaveEffect() {
           preserveAspectRatio="none"
         >
           <path
-            className="fill-purple-300/10"
+            className="fill-purple-200/10"
             d="M0,160 
                C300,260 600,60 900,160 
                C1200,260 1500,60 1800,160 

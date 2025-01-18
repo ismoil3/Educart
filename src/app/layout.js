@@ -21,14 +21,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#6440FB" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <ThemeWrapper>
-         <Header/>
-         {children}
-         <br/><br/><br/><br/>
-         </ThemeWrapper>
+        <ThemeWrapper>
+          <Header />
+          <main>{children}</main>
+        </ThemeWrapper>
       </body>
     </html>
   );
