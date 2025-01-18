@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "./components/shared/header/header";
 import useThemeStore from "./store/themeStore";
 import Container from "./components/shared/container/container";
@@ -13,10 +13,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import CourseList from "./components/home/courseList";
+import Aos from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export default function Home() {
   const { isDarkMode } = useThemeStore();
   console.log(isDarkMode);
+
 
   const settings = {
     infinite: true,
@@ -114,6 +117,15 @@ export default function Home() {
     },
   ];
 
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: true, // Animation will only happen once
+      easing: "ease-in-out", // Animation easing function
+    });
+  }, []);
+
   return (
     <div>
       {/* section 1 */}
@@ -123,7 +135,7 @@ export default function Home() {
         <Container>
           <div className="flex justify-between  ">
             {/* section 1 left div */}
-            <div>
+            <div data-aos="fade-right">
               <h1 className="text-[35px]  text-[#FFFFFF] capitalize leading-[50px] md:text-[55px] md:leading-[80px] max-w-[630px]">
                 Learn New Skills Online with Top{" "}
                 <span className="text-[#00FF84] underline cursor-pointer ">
@@ -209,11 +221,11 @@ export default function Home() {
               </div>
             </div>
             {/* section right div */}
-            <div className=" rig relative p-8 w-full  justify-end hidden lg:flex">
+            <div  className=" rig relative p-8 w-full  justify-end hidden lg:flex">
               {/* Container for the stacked layout */}
               <div className="relative max-w-[550px] w-full">
                 {/* Central Image */}
-                <div className="absolute mx-auto w-[300px] left-0 h-[300px] z-10">
+                <div  data-aos="fade-up"  data-aos-duration="3000" className="absolute mx-auto w-[300px] left-0 h-[300px] z-10">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png"
@@ -224,7 +236,7 @@ export default function Home() {
                 </div>
 
                 {/* Top Right Image */}
-                <div className="absolute top-[-40px] right-[-50px] z-20">
+                <div  data-aos="fade-up"  data-aos-duration="2000" className="absolute top-[-40px] right-[-50px] z-20">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png"
@@ -235,7 +247,7 @@ export default function Home() {
                 </div>
 
                 {/* Bottom Right Image */}
-                <div className="absolute bottom-[-40px] right-[-30px] z-10">
+                <div  data-aos="fade-up" className="absolute bottom-[-40px] right-[-30px] z-10">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-2.png"
@@ -246,9 +258,9 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 1 */}
-                <div className=" ov absolute flex items-center gap-[20px] bottom-[-30px] left-[-70px] bg-white p-4 rounded-lg shadow-lg z-30">
+                <div data-aos="zoom-in"  data-aos-duration="1500" className=" ov absolute flex items-center gap-[20px] bottom-[-30px] left-[-70px] bg-white p-4 rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
-                  <div>
+                  <div >
                     <p className="text-[#EB6652] font-normal text-sm">
                       3,000+{" "}
                     </p>
@@ -257,7 +269,7 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 2 */}
-                <div className=" ov absolute flex gap-[20px] items-center top-[60px] right-8 transform  bg-white p-[10px_10px] rounded-lg shadow-lg z-30">
+                <div data-aos="zoom-out-down" className=" ov absolute flex gap-[20px] items-center top-[60px] right-8 transform  bg-white p-[10px_10px] rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png" />
                   <div>
                     <p className="text-[#1B0B47] font-bold text-sm">
@@ -269,7 +281,7 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 3 */}
-                <div className=" ov absolute flex gap-[20px] items-center bottom-[-60px] right-[-20px] bg-white p-4 rounded-lg shadow-lg z-30">
+                <div data-aos="zoom-in-left" className=" ov absolute flex gap-[20px] items-center bottom-[-60px] right-[-20px] bg-white p-4 rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
                   <div>
                     <p className="text-[#BAA9FD] font-bold text-sm">
@@ -294,7 +306,7 @@ export default function Home() {
         >
           Trusted by the world’s best
         </p>
-        <div className="w-[95%] mt-[30px]  m-auto">
+        <div data-aos="zoom-in" className="w-[95%] mt-[30px]  m-auto">
           <Slider arrows={false} {...settings}>
             <div className="p-[20px]">
               <Image
