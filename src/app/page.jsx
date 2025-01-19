@@ -147,7 +147,7 @@ export default function Home() {
         <Container>
           <div className="flex justify-between  ">
             {/* section 1 left div */}
-            <div data-aos="fade-right">
+            <div >
               <h1 className="text-[35px]  text-[#FFFFFF] capitalize leading-[50px] md:text-[55px] md:leading-[80px] max-w-[630px]">
                 Learn New Skills Online with Top{" "}
                 <span className="text-[#00FF84] underline cursor-pointer ">
@@ -238,8 +238,7 @@ export default function Home() {
               <div className="relative max-w-[550px] w-full">
                 {/* Central Image */}
                 <div
-                  data-aos="fade-up"
-                  data-aos-duration="3000"
+                 
                   className="absolute mx-auto w-[300px] left-0 h-[300px] z-10"
                 >
                   <Image
@@ -253,8 +252,7 @@ export default function Home() {
 
                 {/* Top Right Image */}
                 <div
-                  data-aos="fade-up"
-                  data-aos-duration="2000"
+                  
                   className="absolute top-[-40px] right-[-50px] z-20"
                 >
                   <Image
@@ -268,7 +266,6 @@ export default function Home() {
 
                 {/* Bottom Right Image */}
                 <div
-                  data-aos="fade-up"
                   className="absolute bottom-[-40px] right-[-30px] z-10"
                 >
                   <Image
@@ -282,8 +279,7 @@ export default function Home() {
 
                 {/* Overlay Text - Card 1 */}
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="1500"
+            
                   className=" ov absolute flex items-center gap-[20px] bottom-[-30px] left-[-70px] bg-white p-4 rounded-lg shadow-lg z-30"
                 >
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
@@ -297,7 +293,6 @@ export default function Home() {
 
                 {/* Overlay Text - Card 2 */}
                 <div
-                  data-aos="zoom-out-down"
                   className=" ov absolute flex gap-[20px] items-center top-[60px] right-8 transform  bg-white p-[10px_10px] rounded-lg shadow-lg z-30"
                 >
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png" />
@@ -312,7 +307,6 @@ export default function Home() {
 
                 {/* Overlay Text - Card 3 */}
                 <div
-                  data-aos="zoom-in-left"
                   className=" ov absolute flex gap-[20px] items-center bottom-[-60px] right-[-20px] bg-white p-4 rounded-lg shadow-lg z-30"
                 >
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
@@ -341,7 +335,7 @@ export default function Home() {
           >
             Trusted by the world’s best
           </p>
-          <div data-aos="zoom-in" className="w-[95%] mt-[30px]  m-auto">
+          <div  className="w-[95%] mt-[30px]  m-auto">
             <Slider arrows={false} {...settings}>
               <div className="p-[20px]">
                 <Image

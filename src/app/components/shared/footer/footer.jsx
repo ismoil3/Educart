@@ -272,9 +272,7 @@ export default function Footer() {
       </Container>
       <br />
       <Box sx={{ display: { xs: "block", lg: "none" } }}>
-        <br />
-        <br />
-        <br />
+       
         <br />
         <br />
         <br />
