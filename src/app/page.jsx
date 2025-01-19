@@ -15,6 +15,7 @@ import Slider from "react-slick";
 import CourseList from "./components/home/courseList";
 import Aos from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import { TestimonialSlider } from "./components/home/TestimonialSlider";
 
 export default function Home() {
   const { isDarkMode } = useThemeStore();
@@ -61,7 +62,15 @@ export default function Home() {
         },
       },
       {
-        breakpoint: 400,
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 0,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -318,85 +327,90 @@ export default function Home() {
         <br />
         <WaveAnimation />
       </div>
-      <Container>
-        <p
-          style={{ color: isDarkMode ? "#fff" : "#140342" }}
-          className={`text-center mt-[40px] text-[18px] `}
-        >
-          Trusted by the world’s best
-        </p>
-        <div data-aos="zoom-in" className="w-[95%] mt-[30px]  m-auto">
-          <Slider arrows={false} {...settings}>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand1.png"
-                }
-                alt="work"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand2.png"
-                }
-                alt="work"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand3.png"
-                }
-                alt="work"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand4.png"
-                }
-                alt="work"
-                width={150}
-                height={100}
-              />
-            </div>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand5.png"
-                }
-                alt="work"
-                width={140}
-                height={100}
-              />
-            </div>
-            <div className="p-[20px]">
-              <Image
-                src={
-                  "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand6.png"
-                }
-                alt="work"
-                width={140}
-                height={100}
-              />
-            </div>
-          </Slider>
-        </div>
-      </Container>
+      {/* section 2 */}
+      <div className={`${
+        isDarkMode ? "bg-gray-900" : "bg-gray-50 "
+      }`}>
+        <Container>
+          <p
+            style={{ color: isDarkMode ? "#fff" : "#140342" }}
+            className={`text-center mt-[40px] text-[18px] `}
+          >
+            Trusted by the world’s best
+          </p>
+          <div data-aos="zoom-in" className="w-[95%] mt-[30px]  m-auto">
+            <Slider arrows={false} {...settings}>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand1.png"
+                  }
+                  alt="work"
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand2.png"
+                  }
+                  alt="work"
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand3.png"
+                  }
+                  alt="work"
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand4.png"
+                  }
+                  alt="work"
+                  width={150}
+                  height={100}
+                />
+              </div>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand5.png"
+                  }
+                  alt="work"
+                  width={140}
+                  height={100}
+                />
+              </div>
+              <div className="p-[20px]">
+                <Image
+                  src={
+                    "https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/brand6.png"
+                  }
+                  alt="work"
+                  width={140}
+                  height={100}
+                />
+              </div>
+            </Slider>
+          </div>
+        </Container>
+      </div>
 
       {/* section 3 */}
       <br />
       <br />
       <br />
       <Container>
-        <div className="text-center">
+        <div data-aos="flip-left" className="text-center">
           <h2
             className="mb-2 text-3xl font-bold sm:text-4xl"
             style={{
@@ -452,6 +466,7 @@ export default function Home() {
       </Container>
       {/* section 4 */}
       <CourseList />
+      <TestimonialSlider />
     </div>
   );
 }
