@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Book, Clock, BarChart } from "lucide-react";
 import useThemeStore from "@/app/store/themeStore";
+import Container from "../shared/container/container";
 
 // Course data (same as before)
 const courses = [
@@ -176,7 +177,8 @@ export default function CourseList() {
         isDarkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
       } mt-[50px] min-h-screen`}
     >
-      <div className="mx-auto max-w-7xl px-4 py-12">
+     <Container>
+     <div className=" px-4 py-12">
         <div className="text-center">
           <h2
             className="mb-2 text-3xl font-bold sm:text-4xl"
@@ -305,6 +307,7 @@ export default function CourseList() {
           ))}
         </div>
       </div>
+     </Container>
     </main>
   );
 }

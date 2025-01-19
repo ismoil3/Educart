@@ -16,6 +16,9 @@ import CourseList from "./components/home/courseList";
 import Aos from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { TestimonialSlider } from "./components/home/TestimonialSlider";
+import HeroSection from "./components/home/sectionGirl";
+import FeaturesSection from "./components/home/learn";
+import InstructorsSection from "./components/home/instructorsSection";
 
 export default function Home() {
   const { isDarkMode } = useThemeStore();
@@ -328,9 +331,7 @@ export default function Home() {
         <WaveAnimation />
       </div>
       {/* section 2 */}
-      <div className={`${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50 "
-      }`}>
+      <div className={`${isDarkMode ? "bg-gray-900" : "bg-gray-50 "}`}>
         <Container>
           <p
             style={{ color: isDarkMode ? "#fff" : "#140342" }}
@@ -465,8 +466,11 @@ export default function Home() {
         </div>
       </Container>
       {/* section 4 */}
-      <CourseList />
+        <CourseList />
       <TestimonialSlider />
+        <HeroSection />
+        <FeaturesSection/>
+        <InstructorsSection/>
     </div>
   );
 }
