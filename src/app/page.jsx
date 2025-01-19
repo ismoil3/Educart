@@ -19,6 +19,8 @@ import { TestimonialSlider } from "./components/home/TestimonialSlider";
 import HeroSection from "./components/home/sectionGirl";
 import FeaturesSection from "./components/home/learn";
 import InstructorsSection from "./components/home/instructorsSection";
+import { MobileSection } from "./components/home/mobile-section";
+import ResourcesNews from "./components/home/resourcesNews";
 
 export default function Home() {
   const { isDarkMode } = useThemeStore();
@@ -466,11 +468,28 @@ export default function Home() {
         </div>
       </Container>
       {/* section 4 */}
-        <CourseList />
+      <CourseList />
       <TestimonialSlider />
-        <HeroSection />
-        <FeaturesSection/>
-        <InstructorsSection/>
+      <HeroSection />
+      <FeaturesSection />
+      <InstructorsSection />
+      <MobileSection />
+      <ResourcesNews />
+
+      <div className="w-full bg-[#6366f1] py-8 px-4 mt-[50px] md:py-12">
+        <Container>
+          <div className=" flex flex-col md:flex-row items-center justify-between gap-6">
+            <h2 className="text-[30px] max-w-[350px] md:text-3xl  font-bold text-white text-center md:text-left">
+              Join more than{" "}
+              <span className="text-[#4ade80]">10 million learners</span>{" "}
+              worldwide
+            </h2>
+            <button className="bg-white text-[#1a1a3c] px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-colors">
+              Start Learning For Free
+            </button>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }

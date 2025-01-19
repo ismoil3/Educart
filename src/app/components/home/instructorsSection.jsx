@@ -82,7 +82,7 @@ export default function InstructorsSection() {
                   src={instructor.image || '/placeholder.svg'}
                   alt={instructor.name}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-transform duration-300 "
                 />
                 {/* Social Icons Overlay */}
                 <div className={`absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300`}>
