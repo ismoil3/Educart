@@ -52,19 +52,19 @@ export default function ResourcesNews() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h2
-            className={`text-3xl font-bold ${
+            className={`text-2xl sm:3xl font-bold ${
               isDarkMode ? "text-white" : "text-[#1a1a3c]"
             }`}
           >
             Resources & News
           </h2>
-          <p className={`mt-2 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+          <p className={`mt-3 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
             Lorem ipsum dolor sit amet, consectetur.
           </p>
         </div>
         <Link
-          href="/blog"
-          className={`px-4 py-2 rounded-lg transition-colors ${
+          href="#"
+          className={`px-2 sm:px-4 mt-[-20px] py-2 rounded-lg transition-colors ${
             isDarkMode
               ? "bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white"
               : "bg-[#f3f1ff] text-[#6366f1] hover:bg-[#6366f1] hover:text-white"

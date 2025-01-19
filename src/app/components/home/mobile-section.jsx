@@ -12,7 +12,7 @@ export function MobileSection() {
     >
       <Container>
         <div className="grid lg:grid-cols-2 justify-between gap-12 items-center">
-          <div className="order-2 lg:order-1">
+          <div className="">
             <Image
               src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/app.png"
               alt="Mobile and tablet devices showing the learning platform"
