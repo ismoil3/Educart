@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../../../../images/logo-white.svg";
-import logo2 from "../../../../images/logo-no-text — копия.png";
+import logo from "../../../../images/logo.jpg";
+import logo2 from "../../../../images/logo.jpg";
 
 import Container from "../container/container";
 import {
@@ -26,6 +26,7 @@ import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const { isDarkMode, toggleTheme } = useThemeStore();
@@ -47,17 +48,26 @@ const Header = () => {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+  const router = useRouter();
+  const isNotFoundPage = router.pathname === "not-found";
+  console.log(isNotFoundPage);
 
   return (
     <div className="bg-[#140342] sticky top-0 border-b-[1px] z-50">
       <Container>
         <div className="flex items-center justify-between py-4">
           <div>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              <Image src={logo} alt="educrat" width={150} height={50} />
-            </Box>
-            <Box sx={{ display: { xs: "block", sm: "none" } }}>
-              <Image src={logo2} alt="educrat" width={55} height={50} />
+            <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
+              <Image
+                src={logo}
+                className="rounded-full"
+                alt="educrat"
+                width={50}
+                height={50}
+              />
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <p className="logo">intellect</p>
+              </Box>
             </Box>
           </div>
 
@@ -216,7 +226,8 @@ const Header = () => {
             ].map((item) => (
               <ListItem
                 key={item.value}
-                onClick={() => {setOpen(false),setAge(item.value);
+                onClick={() => {
+                  setOpen(false), setAge(item.value);
                 }}
                 sx={{
                   cursor: "pointer",

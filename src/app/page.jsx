@@ -63,19 +63,17 @@ export default function Home() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          centerMode: true,
         },
       },
       {
         breakpoint: 450,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 0,
+        breakpoint: 400,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -147,7 +145,7 @@ export default function Home() {
         <Container>
           <div className="flex justify-between  ">
             {/* section 1 left div */}
-            <div >
+            <div>
               <h1 className="text-[35px]  text-[#FFFFFF] capitalize leading-[50px] md:text-[55px] md:leading-[80px] max-w-[630px]">
                 Learn New Skills Online with Top{" "}
                 <span className="text-[#00FF84] underline cursor-pointer ">
@@ -237,10 +235,7 @@ export default function Home() {
               {/* Container for the stacked layout */}
               <div className="relative max-w-[550px] w-full">
                 {/* Central Image */}
-                <div
-                 
-                  className="absolute mx-auto w-[300px] left-0 h-[300px] z-10"
-                >
+                <div className="absolute mx-auto w-[300px] left-0 h-[300px] z-10">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png"
@@ -251,10 +246,7 @@ export default function Home() {
                 </div>
 
                 {/* Top Right Image */}
-                <div
-                  
-                  className="absolute top-[-40px] right-[-50px] z-20"
-                >
+                <div className="absolute top-[-40px] right-[-50px] z-20">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png"
@@ -265,9 +257,7 @@ export default function Home() {
                 </div>
 
                 {/* Bottom Right Image */}
-                <div
-                  className="absolute bottom-[-40px] right-[-30px] z-10"
-                >
+                <div className="absolute bottom-[-40px] right-[-30px] z-10">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-2.png"
@@ -278,10 +268,7 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 1 */}
-                <div
-            
-                  className=" ov absolute flex items-center gap-[20px] bottom-[-30px] left-[-70px] bg-white p-4 rounded-lg shadow-lg z-30"
-                >
+                <div className=" ov absolute flex items-center gap-[20px] bottom-[-30px] left-[-70px] bg-white p-4 rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
                   <div>
                     <p className="text-[#EB6652] font-normal text-sm">
@@ -292,9 +279,7 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 2 */}
-                <div
-                  className=" ov absolute flex gap-[20px] items-center top-[60px] right-8 transform  bg-white p-[10px_10px] rounded-lg shadow-lg z-30"
-                >
+                <div className=" ov absolute flex gap-[20px] items-center top-[60px] right-8 transform  bg-white p-[10px_10px] rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png" />
                   <div>
                     <p className="text-[#1B0B47] font-bold text-sm">
@@ -306,9 +291,7 @@ export default function Home() {
                 </div>
 
                 {/* Overlay Text - Card 3 */}
-                <div
-                  className=" ov absolute flex gap-[20px] items-center bottom-[-60px] right-[-20px] bg-white p-4 rounded-lg shadow-lg z-30"
-                >
+                <div className=" ov absolute flex gap-[20px] items-center bottom-[-60px] right-[-20px] bg-white p-4 rounded-lg shadow-lg z-30">
                   <Avatar src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/about.png" />
                   <div>
                     <p className="text-[#BAA9FD] font-bold text-sm">
@@ -335,7 +318,7 @@ export default function Home() {
           >
             Trusted by the world’s best
           </p>
-          <div  className="w-[95%] mt-[30px]  m-auto">
+          <div className="w-[95%] mt-[30px]  m-auto">
             <Slider arrows={false} {...settings}>
               <div className="p-[20px]">
                 <Image

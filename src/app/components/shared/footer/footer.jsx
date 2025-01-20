@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react";
 import Container from "../container/container";
 import { Box } from "@mui/material";
-
+import logo from "../../../../images/logo.jpg"
 export default function Footer() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,16 +21,18 @@ export default function Footer() {
         {/* Header */}
         <div className="grid grid-cols-1 sm:flex sm:flex-row justify-between items-center mb-16 gap-4">
           <div className="flex items-center gap-2 justify-center sm:justify-start">
-            <div className="bg-[#6366f1] rounded-full p-2">
+            <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
               <Image
-                src="/placeholder.svg?height=32&width=32"
-                alt="Educrat logo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
+                src={logo}
+                className="rounded-full"
+                alt="educrat"
+                width={50}
+                height={50}
               />
-            </div>
-            <span className="text-xl font-bold">Educrat</span>
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                <p className="logo">intellect</p>
+              </Box>
+            </Box>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <span className="text-sm sm:text-base">
@@ -272,7 +274,6 @@ export default function Footer() {
       </Container>
       <br />
       <Box sx={{ display: { xs: "block", lg: "none" } }}>
-       
         <br />
         <br />
         <br />
