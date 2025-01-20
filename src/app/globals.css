@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Merienda", serif;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
 }
 
 .logo {
@@ -16,7 +16,7 @@
 }
 
 .rig:hover .ov {
-  animation: cursor 0.5s ease forwards, anti-cursor 2s ease-out infinite;
+  animation: cursor 0.5s ease forwards, anti-cursor 3s ease-out infinite;
 }
 
 /* Animation for cursor movement */
