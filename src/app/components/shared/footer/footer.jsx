@@ -224,7 +224,7 @@ export default function Footer() {
             </p>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-2"
+              className="flex flex-col flex-wrap sm:flex-row gap-2"
             >
               <input
                 type="email"

@@ -246,7 +246,7 @@ export default function Home() {
                 </div>
 
                 {/* Top Right Image */}
-                <div className="absolute top-[-40px] right-[-50px] z-20">
+                <div className="absolute top-[-40px] right-[-40px] z-20">
                   <Image
                     className="rounded-lg"
                     src="https://demoapus1.com/educrat/learnpress/wp-content/uploads/2022/07/home1-1.png"

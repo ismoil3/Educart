@@ -103,9 +103,9 @@ export function TestimonialSlider() {
 
         {/* Slider */}
         <div className="relative">
-          <Slider ref={sliderRef} {...settings} className="testimonial-slider">
+          <Slider ref={sliderRef} {...settings} className="testimonial-slider ">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="px-3">
+              <div key={index} className="px-3 h-[300px]">
                 <Card
                   className="relative h-full p-8"
                   sx={{

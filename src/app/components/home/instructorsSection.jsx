@@ -74,7 +74,7 @@ export default function InstructorsSection() {
           {instructors.map((instructor, index) => (
             <div
               key={index}
-              className={`group relative rounded-xl overflow-hidden shadow-md ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}
+              className={`group relative rounded-xl  overflow-hidden shadow-md ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}
             >
               {/* Image Container */}
               <div className="h-[200px] w-full relative">

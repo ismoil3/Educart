@@ -53,7 +53,7 @@ const Header = () => {
   console.log(isNotFoundPage);
 
   return (
-    <div className="bg-[#140342] sticky top-0 border-b-[1px] z-50">
+    <div className="bg-[#140342] sticky top-0  z-50">
       <Container>
         <div className="flex items-center justify-between py-4">
           <div>
